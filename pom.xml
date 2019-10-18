@@ -56,6 +56,7 @@
 		<smartystreets.version>3.3.8</smartystreets.version>
         <dynamodb.version>1.11.636</dynamodb.version>
         <apache-poi.version>4.1.0</apache-poi.version>
+        <okta.version>1.2.1</okta.version>
     </properties>
 
     <parent>
@@ -139,6 +140,13 @@
                 <artifactId>poi-ooxml</artifactId>
                 <version>${apache-poi.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.okta.spring</groupId>
+                <artifactId>okta-spring-boot-starter</artifactId>
+                <version>${okta.version}}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
