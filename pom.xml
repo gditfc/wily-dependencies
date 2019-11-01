@@ -52,7 +52,7 @@
         <swagger.version>2.9.2</swagger.version>
         <prometheus.version>0.6.0</prometheus.version>
         <micrometer.version>1.2.1</micrometer.version>
-        <nimbus-jose-jwt.version>7.8</nimbus-jose-jwt.version>
+        <nimbus-jose-jwt.version>7.9</nimbus-jose-jwt.version>
 		<smartystreets.version>3.3.8</smartystreets.version>
         <dynamodb.version>1.11.636</dynamodb.version>
         <apache-poi.version>4.1.0</apache-poi.version>
