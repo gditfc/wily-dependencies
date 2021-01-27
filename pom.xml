@@ -4,7 +4,7 @@
 
     <groupId>io.csra.wily</groupId>
     <artifactId>dependencies</artifactId>
-    <version>2.2.0</version>
+    <version>2.4.2</version>
     <packaging>pom</packaging>
 
     <name>wily-dependencies</name>
@@ -38,32 +38,37 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <connector-api-version>1.5</connector-api-version>
-        <commons-lang3-version>3.9</commons-lang3-version>
-        <ehcache-version>2.10.6</ehcache-version>
-        <validation-api-version>1.1.0.Final</validation-api-version>
-        <dozer-version>5.5.1</dozer-version>
-        <commons-fileupload-version>1.4</commons-fileupload-version>
-        <hamcrest-all-version>1.3</hamcrest-all-version>
+        <!-- Managed Dependency Versions -->
+        <spring-cloud.version>2020.0.0</spring-cloud.version>
+        <mongo-db-version>3.12.7</mongo-db-version>
         <javax.jms.version>2.0.1</javax.jms.version>
-        <logstash-logback-version>6.2</logstash-logback-version>
-        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
-        <mongo-db-version>3.9.1</mongo-db-version>
-        <swagger.version>2.9.2</swagger.version>
-        <prometheus.version>0.6.0</prometheus.version>
-        <micrometer-registry-prometheus.version>1.2.1</micrometer-registry-prometheus.version>
-        <nimbus-jose-jwt.version>7.9</nimbus-jose-jwt.version>
-		<smartystreets.version>3.3.8</smartystreets.version>
-        <dynamodb.version>1.11.636</dynamodb.version>
-        <apache-poi.version>4.1.0</apache-poi.version>
-        <okta.version>1.2.1</okta.version>
-        <jooq.version>3.11.12</jooq.version>
+        <swagger.version>3.0.0</swagger.version>
+        <micrometer-registry-prometheus.version>1.6.3</micrometer-registry-prometheus.version>
+        <prometheus.version>0.9.0</prometheus.version>
+        <nimbus-jose-jwt.version>9.4.1</nimbus-jose-jwt.version>
+        <smartystreets.version>3.7.2</smartystreets.version>
+        <dynamodb.version>1.11.942</dynamodb.version>
+        <apache-poi.version>5.0.0</apache-poi.version>
+        <okta.version>2.0.0</okta.version>
+        <jooq.version>3.14.4</jooq.version>
+        <commons-fileupload-version>1.4</commons-fileupload-version>
+        <dozer-version>6.5.0</dozer-version>
+        <ehcache-version>3.9.0</ehcache-version>
+        <commons-lang3-version>3.11</commons-lang3-version>
+        <commons-io-version>2.6</commons-io-version>
+        <connector-api-version>1.5</connector-api-version>
+        <logstash-logback-version>6.6</logstash-logback-version>
+        <hamcrest-all-version>1.3</hamcrest-all-version>
+        <joda-time-version>2.10.4</joda-time-version>
+
+        <!-- Spring Override Versions -->
+        <validation-api-version>1.1.0.Final</validation-api-version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.0.RELEASE</version>
+        <version>2.4.2</version>
     </parent>
 
     <dependencyManagement>
@@ -88,13 +93,7 @@
 
             <dependency>
                 <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
+                <artifactId>springfox-boot-starter</artifactId>
                 <version>${swagger.version}</version>
             </dependency>
 
@@ -159,13 +158,19 @@
             </dependency>
 
             <dependency>
-                <groupId>net.sf.dozer</groupId>
-                <artifactId>dozer</artifactId>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.dozermapper</groupId>
+                <artifactId>dozer-core</artifactId>
                 <version>${dozer-version}</version>
             </dependency>
 
             <dependency>
-                <groupId>net.sf.ehcache</groupId>
+                <groupId>org.ehcache</groupId>
                 <artifactId>ehcache</artifactId>
                 <version>${ehcache-version}</version>
             </dependency>
@@ -192,6 +197,12 @@
                 <groupId>org.hamcrest</groupId>
                 <artifactId>hamcrest-all</artifactId>
                 <version>${hamcrest-all-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time-version}</version>
             </dependency>
 
         </dependencies>
