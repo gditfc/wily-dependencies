@@ -4,37 +4,38 @@
 
     <groupId>io.csra.wily</groupId>
     <artifactId>dependencies</artifactId>
-    <version>2.6.1</version>
+    <version>2.6.2</version>
     <packaging>pom</packaging>
 
     <name>wily-dependencies</name>
-	<description>Parent Dependency POM that extends Spring Boot for the Wily Framework.</description>
-	<url>https://github.com/gditfc/wily-dependencies</url>
+    <description>Parent Dependency POM that extends Spring Boot for the Wily Framework.</description>
+    <url>https://github.com/gditfc/wily-dependencies</url>
 
-	<licenses>
-		<license>
-		  <name>The Apache Software License, Version 2.0</name>
-		  <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
-	<developers>
-		<developer>
-		  <name>Nick DiMola</name>
-		  <email>nick.dimola@gdit.com</email>
-		  <organization>GDIT</organization>
-		  <organizationUrl>https://www.gdit.com</organizationUrl>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <name>Nick DiMola</name>
+            <email>nick.dimola@gdit.com</email>
+            <organization>GDIT</organization>
+            <organizationUrl>https://www.gdit.com</organizationUrl>
+        </developer>
+    </developers>
 
-	<scm>
-		<connection>scm:git:https://github.com/gditfc/wily-dependencies.git</connection>
-		<developerConnection>scm:git:ssh://github.com:gditfc/wily-dependencies.git</developerConnection>
-		<url>https://github.com/gditfc/wily-dependencies/tree/master</url>
-	</scm>
+    <scm>
+        <connection>scm:git:https://github.com/gditfc/wily-dependencies.git</connection>
+        <developerConnection>scm:git:ssh://github.com:gditfc/wily-dependencies.git</developerConnection>
+        <url>https://github.com/gditfc/wily-dependencies/tree/master</url>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
@@ -42,15 +43,14 @@
         <spring-cloud.version>2021.0.0</spring-cloud.version>
         <mongo-db-version>3.12.10</mongo-db-version>
         <javax.jms.version>2.0.1</javax.jms.version>
-        <swagger.version>3.0.0</swagger.version>
         <micrometer-registry-prometheus.version>1.8.1</micrometer-registry-prometheus.version>
         <prometheus.version>0.14.1</prometheus.version>
         <nimbus-jose-jwt.version>9.16-preview.1</nimbus-jose-jwt.version>
         <smartystreets.version>3.12.3</smartystreets.version>
-        <dynamodb.version>1.12.130</dynamodb.version>
+        <dynamodb.version>1.12.136</dynamodb.version>
         <apache-poi.version>5.1.0</apache-poi.version>
-        <okta.version>2.1.3</okta.version>
-        <jooq.version>3.15.5</jooq.version>
+        <okta.version>2.1.4</okta.version>
+        <jooq.version>3.16.1</jooq.version>
         <commons-fileupload-version>1.4</commons-fileupload-version>
         <dozer-version>6.5.2</dozer-version>
         <ehcache-version>3.9.9</ehcache-version>
@@ -60,15 +60,24 @@
         <logstash-logback-version>7.0.1</logstash-logback-version>
         <hamcrest-all-version>1.3</hamcrest-all-version>
         <joda-time-version>2.10.13</joda-time-version>
-        <ch-qos-logback.version>1.2.9</ch-qos-logback.version>
+        <ch-qos-logback.version>1.2.10</ch-qos-logback.version>
         <spring-webflux.version>5.3.14</spring-webflux.version>
-        <log4j-api.version>2.17.0</log4j-api.version>
+        <log4j-api.version>2.17.1</log4j-api.version>
+        <commons-collection4.version>4.4</commons-collection4.version>
+        <springdoc-openapi.version>1.6.4</springdoc-openapi.version>
+        <therapi-runtime-javadoc-scribe.version>0.13.0</therapi-runtime-javadoc-scribe.version>
+
+        <!-- Managed Plugin Versions -->
+        <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+        <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.1</version>
+        <version>2.6.2</version>
     </parent>
 
     <dependencyManagement>
@@ -98,12 +107,6 @@
             </dependency>
 
             <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-boot-starter</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-registry-prometheus</artifactId>
                 <version>${micrometer-registry-prometheus.version}</version>
@@ -121,11 +124,11 @@
                 <version>${nimbus-jose-jwt.version}</version>
             </dependency>
 
-			<dependency>
-				<groupId>com.smartystreets.api</groupId>
-				<artifactId>smartystreets-java-sdk</artifactId>
-				<version>${smartystreets.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>com.smartystreets.api</groupId>
+                <artifactId>smartystreets-java-sdk</artifactId>
+                <version>${smartystreets.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.amazonaws</groupId>
@@ -148,6 +151,12 @@
             <dependency>
                 <groupId>com.okta.spring</groupId>
                 <artifactId>okta-spring-boot-starter</artifactId>
+                <version>${project.parent.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.okta.spring</groupId>
+                <artifactId>okta-spring-sdk</artifactId>
                 <version>${okta.version}</version>
             </dependency>
 
@@ -229,47 +238,122 @@
                 <version>${log4j-api.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collection4.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc-openapi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-security</artifactId>
+                <version>${springdoc-openapi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-javadoc</artifactId>
+                <version>${springdoc-openapi.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>3.0.1</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.8</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>false</autoReleaseAfterClose>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-	
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>com.github.therapi</groupId>
+                                <artifactId>therapi-runtime-javadoc-scribe</artifactId>
+                                <version>${therapi-runtime-javadoc-scribe.version}</version>
+                            </path>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven-gpg-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>${nexus-staging-maven-plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>ossrh</serverId>
+                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin.version}</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
 </project>
