@@ -151,7 +151,7 @@
             <dependency>
                 <groupId>com.okta.spring</groupId>
                 <artifactId>okta-spring-boot-starter</artifactId>
-                <version>${project.parent.version}</version>
+                <version>${okta.version}</version>
             </dependency>
 
             <dependency>
