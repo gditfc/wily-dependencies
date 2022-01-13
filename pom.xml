@@ -40,38 +40,42 @@
         <maven.compiler.target>17</maven.compiler.target>
 
         <!-- Managed Dependency Versions -->
-        <spring-cloud.version>2021.0.0</spring-cloud.version>
-        <mongo-db-version>3.12.10</mongo-db-version>
-        <javax.jms.version>2.0.1</javax.jms.version>
-        <micrometer-registry-prometheus.version>1.8.1</micrometer-registry-prometheus.version>
-        <prometheus.version>0.14.1</prometheus.version>
-        <nimbus-jose-jwt.version>9.16-preview.1</nimbus-jose-jwt.version>
-        <smartystreets.version>3.12.3</smartystreets.version>
-        <dynamodb.version>1.12.136</dynamodb.version>
         <apache-poi.version>5.1.0</apache-poi.version>
-        <okta.version>2.1.4</okta.version>
-        <jooq.version>3.16.1</jooq.version>
-        <commons-fileupload-version>1.4</commons-fileupload-version>
-        <dozer-version>6.5.2</dozer-version>
-        <ehcache-version>3.9.9</ehcache-version>
-        <commons-lang3-version>3.12.0</commons-lang3-version>
-        <commons-io-version>2.11.0</commons-io-version>
-        <connector-api-version>1.5</connector-api-version>
-        <logstash-logback-version>7.0.1</logstash-logback-version>
-        <hamcrest-all-version>1.3</hamcrest-all-version>
-        <joda-time-version>2.10.13</joda-time-version>
+        <aws-java-sdk-ses.version>1.12.131</aws-java-sdk-ses.version>
         <ch-qos-logback.version>1.2.10</ch-qos-logback.version>
-        <spring-webflux.version>5.3.14</spring-webflux.version>
-        <log4j-api.version>2.17.1</log4j-api.version>
         <commons-collection4.version>4.4</commons-collection4.version>
+        <commons-fileupload-version>1.4</commons-fileupload-version>
+        <commons-io-version>2.11.0</commons-io-version>
+        <commons-lang3-version>3.12.0</commons-lang3-version>
+        <commons-validator.version>1.7</commons-validator.version>
+        <connector-api-version>1.5</connector-api-version>
+        <dozer-version>6.5.2</dozer-version>
+        <dynamodb.version>1.12.136</dynamodb.version>
+        <ehcache-version>3.9.9</ehcache-version>
+        <hamcrest-all-version>1.3</hamcrest-all-version>
+        <javax.jms.version>2.0.1</javax.jms.version>
+        <jaxb-impl.version>3.0.2</jaxb-impl.version>
+        <joda-time-version>2.10.13</joda-time-version>
+        <jooq.version>3.16.1</jooq.version>
+        <log4j-api.version>2.17.1</log4j-api.version>
+        <logstash-logback-version>7.0.1</logstash-logback-version>
+        <micrometer-registry-prometheus.version>1.8.1</micrometer-registry-prometheus.version>
+        <mongo-db-version>3.12.10</mongo-db-version>
+        <nimbus-jose-jwt.version>9.16-preview.1</nimbus-jose-jwt.version>
+        <okta.version>2.1.4</okta.version>
+        <postgresql.version>42.3.1</postgresql.version>
+        <prometheus.version>0.14.1</prometheus.version>
+        <smartystreets.version>3.12.3</smartystreets.version>
+        <spring-cloud.version>2021.0.0</spring-cloud.version>
+        <spring-webflux.version>5.3.14</spring-webflux.version>
         <springdoc-openapi.version>1.6.4</springdoc-openapi.version>
         <therapi-runtime-javadoc-scribe.version>0.13.0</therapi-runtime-javadoc-scribe.version>
 
         <!-- Managed Plugin Versions -->
-        <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
-        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
     </properties>
 
     <parent>
@@ -134,6 +138,12 @@
                 <groupId>com.amazonaws</groupId>
                 <artifactId>aws-java-sdk-dynamodb</artifactId>
                 <version>${dynamodb.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-ses</artifactId>
+                <version>${aws-java-sdk-ses.version}</version>
             </dependency>
 
             <dependency>
@@ -262,6 +272,24 @@
                 <version>${springdoc-openapi.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>commons-validator</groupId>
+                <artifactId>commons-validator</artifactId>
+                <version>${commons-validator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-impl</artifactId>
+                <version>${jaxb-impl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -271,74 +299,14 @@
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <annotationProcessorPaths>
-                            <path>
-                                <groupId>com.github.therapi</groupId>
-                                <artifactId>therapi-runtime-javadoc-scribe</artifactId>
-                                <version>${therapi-runtime-javadoc-scribe.version}</version>
-                            </path>
-                            <path>
-                                <groupId>org.projectlombok</groupId>
-                                <artifactId>lombok</artifactId>
-                                <version>${lombok.version}</version>
-                            </path>
-                        </annotationProcessorPaths>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <id>attach-javadocs</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>${maven-gpg-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>sign-artifacts</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>sign</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
 
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${nexus-staging-maven-plugin.version}</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <serverId>ossrh</serverId>
-                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                        <autoReleaseAfterClose>false</autoReleaseAfterClose>
-                    </configuration>
                 </plugin>
 
                 <plugin>
