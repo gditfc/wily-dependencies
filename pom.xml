@@ -40,7 +40,7 @@
 
         <!-- Managed Dependency Versions -->
         <spring-cloud.version>2020.0.0</spring-cloud.version>
-        <mongo-db-version>3.12.7</mongo-db-version>
+        <mongo-db-version>3.12.8</mongo-db-version>
         <javax.jms.version>2.0.1</javax.jms.version>
         <swagger.version>3.0.0</swagger.version>
         <micrometer-registry-prometheus.version>1.6.3</micrometer-registry-prometheus.version>
