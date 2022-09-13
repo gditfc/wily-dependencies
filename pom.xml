@@ -65,7 +65,7 @@
         <okta.version>2.1.6</okta.version>
         <postgresql.version>42.5.0</postgresql.version>
         <prometheus.version>0.16.0</prometheus.version>
-        <smartystreets.version>3.13.10</smartystreets.version>
+        <smartystreets.version>3.13.0</smartystreets.version>
         <spring-cloud.version>2021.0.4</spring-cloud.version>
         <spring-webflux.version>5.3.22</spring-webflux.version>
         <springdoc-openapi.version>1.6.11</springdoc-openapi.version>
