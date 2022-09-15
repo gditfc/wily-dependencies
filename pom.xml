@@ -58,6 +58,7 @@
         <jaxb-impl.version>4.0.0</jaxb-impl.version>
         <joda-time-version>2.11.1</joda-time-version>
         <jooq.version>3.17.4</jooq.version>
+        <json-flattener.version>0.14.0</json-flattener.version>
         <log4j-api.version>2.18.0</log4j-api.version>
         <logstash-logback-version>7.2</logstash-logback-version>
         <micrometer-registry-prometheus.version>1.9.4</micrometer-registry-prometheus.version>
@@ -256,6 +257,12 @@
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-api</artifactId>
                 <version>${log4j-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.wnameless.json</groupId>
+                <artifactId>json-flattener</artifactId>
+                <version>${json-flattener.version}</version>
             </dependency>
 
             <dependency>
