@@ -4,7 +4,7 @@
 
     <groupId>io.csra.wily</groupId>
     <artifactId>dependencies</artifactId>
-    <version>2.7.1</version>
+    <version>2.7.3</version>
     <packaging>pom</packaging>
 
     <name>wily-dependencies</name>
@@ -41,41 +41,43 @@
 
         <!-- Managed Dependency Versions -->
         <apache-poi.version>5.2.2</apache-poi.version>
-        <aws-java-sdk-ses.version>1.12.262</aws-java-sdk-ses.version>
+        <aws-java-sdk-ses.version>1.12.300</aws-java-sdk-ses.version>
         <ch-qos-logback.version>1.2.11</ch-qos-logback.version>
         <commons-collection4.version>4.4</commons-collection4.version>
         <commons-fileupload-version>1.4</commons-fileupload-version>
         <commons-io-version>2.11.0</commons-io-version>
         <commons-lang3-version>3.12.0</commons-lang3-version>
+        <commons-text.version>1.9</commons-text.version>
         <commons-validator.version>1.7</commons-validator.version>
         <connector-api-version>1.5</connector-api-version>
         <dozer-version>6.5.2</dozer-version>
-        <dynamodb.version>1.12.262</dynamodb.version>
-        <ehcache-version>3.10.0</ehcache-version>
+        <dynamodb.version>1.12.300</dynamodb.version>
+        <ehcache-version>3.10.1</ehcache-version>
         <hamcrest-all-version>1.3</hamcrest-all-version>
         <javax.jms.version>2.0.1</javax.jms.version>
         <jaxb-impl.version>4.0.0</jaxb-impl.version>
-        <joda-time-version>2.10.14</joda-time-version>
-        <jooq.version>3.16.6</jooq.version>
+        <joda-time-version>2.11.1</joda-time-version>
+        <jooq.version>3.17.4</jooq.version>
+        <json-flattener.version>0.14.0</json-flattener.version>
         <log4j-api.version>2.18.0</log4j-api.version>
         <logstash-logback-version>7.2</logstash-logback-version>
-        <micrometer-registry-prometheus.version>1.9.2</micrometer-registry-prometheus.version>
+        <micrometer-registry-prometheus.version>1.9.4</micrometer-registry-prometheus.version>
         <mongo-db-version>3.12.11</mongo-db-version>
-        <nimbus-jose-jwt.version>9.23</nimbus-jose-jwt.version>
-        <okta.version>2.1.5</okta.version>
-        <postgresql.version>42.4.0</postgresql.version>
+        <nimbus-jose-jwt.version>9.24.4</nimbus-jose-jwt.version>
+        <okta.version>2.1.6</okta.version>
+        <postgresql.version>42.5.0</postgresql.version>
         <prometheus.version>0.16.0</prometheus.version>
-        <smartystreets.version>3.12.10</smartystreets.version>
-        <spring-cloud.version>2021.0.3</spring-cloud.version>
+        <smartystreets.version>3.13.0</smartystreets.version>
+        <spring-cloud.version>2021.0.4</spring-cloud.version>
         <spring-webflux.version>5.3.22</spring-webflux.version>
-        <springdoc-openapi.version>1.6.9</springdoc-openapi.version>
-        <therapi-runtime-javadoc-scribe.version>0.14.0</therapi-runtime-javadoc-scribe.version>
+        <springdoc-openapi.version>1.6.11</springdoc-openapi.version>
+        <therapi-runtime-javadoc-scribe.version>0.15.0</therapi-runtime-javadoc-scribe.version>
 
         <!-- Managed Plugin Versions -->
         <git-commit-id-plugin.version>4.9.10</git-commit-id-plugin.version>
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-        <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
+        <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <springdoc-openapi-maven-plugin.version>1.4</springdoc-openapi-maven-plugin.version>
@@ -84,7 +86,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.1</version>
+        <version>2.7.3</version>
     </parent>
 
     <dependencyManagement>
@@ -210,6 +212,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${commons-text.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>javax.resource</groupId>
                 <artifactId>connector-api</artifactId>
                 <version>${connector-api-version}</version>
@@ -249,6 +257,12 @@
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-api</artifactId>
                 <version>${log4j-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.wnameless.json</groupId>
+                <artifactId>json-flattener</artifactId>
+                <version>${json-flattener.version}</version>
             </dependency>
 
             <dependency>
