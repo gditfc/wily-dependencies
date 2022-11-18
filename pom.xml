@@ -4,75 +4,99 @@
 
     <groupId>io.csra.wily</groupId>
     <artifactId>dependencies</artifactId>
-    <version>2.4.2</version>
+    <version>2.7.3</version>
     <packaging>pom</packaging>
 
     <name>wily-dependencies</name>
-	<description>Parent Dependency POM that extends Spring Boot for the Wily Framework.</description>
-	<url>https://github.com/gditfc/wily-dependencies</url>
+    <description>Parent Dependency POM that extends Spring Boot for the Wily Framework.</description>
+    <url>https://github.com/gditfc/wily-dependencies</url>
 
-	<licenses>
-		<license>
-		  <name>The Apache Software License, Version 2.0</name>
-		  <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
-	<developers>
-		<developer>
-		  <name>Nick DiMola</name>
-		  <email>nick.dimola@gdit.com</email>
-		  <organization>GDIT</organization>
-		  <organizationUrl>https://www.gdit.com</organizationUrl>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <name>Nick DiMola</name>
+            <email>nick.dimola@gdit.com</email>
+            <organization>GDIT</organization>
+            <organizationUrl>https://www.gdit.com</organizationUrl>
+        </developer>
+    </developers>
 
-	<scm>
-		<connection>scm:git:https://github.com/gditfc/wily-dependencies.git</connection>
-		<developerConnection>scm:git:ssh://github.com:gditfc/wily-dependencies.git</developerConnection>
-		<url>https://github.com/gditfc/wily-dependencies/tree/master</url>
-	</scm>
+    <scm>
+        <connection>scm:git:https://github.com/gditfc/wily-dependencies.git</connection>
+        <developerConnection>scm:git:ssh://github.com:gditfc/wily-dependencies.git</developerConnection>
+        <url>https://github.com/gditfc/wily-dependencies/tree/master</url>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
 
         <!-- Managed Dependency Versions -->
-        <spring-cloud.version>2020.0.0</spring-cloud.version>
-        <mongo-db-version>3.12.7</mongo-db-version>
-        <javax.jms.version>2.0.1</javax.jms.version>
-        <swagger.version>3.0.0</swagger.version>
-        <micrometer-registry-prometheus.version>1.6.3</micrometer-registry-prometheus.version>
-        <prometheus.version>0.9.0</prometheus.version>
-        <nimbus-jose-jwt.version>9.4.1</nimbus-jose-jwt.version>
-        <smartystreets.version>3.7.2</smartystreets.version>
-        <dynamodb.version>1.11.942</dynamodb.version>
-        <apache-poi.version>5.0.0</apache-poi.version>
-        <okta.version>2.0.0</okta.version>
-        <jooq.version>3.14.4</jooq.version>
+        <apache-poi.version>5.2.2</apache-poi.version>
+        <aws-java-sdk-ses.version>1.12.300</aws-java-sdk-ses.version>
+        <ch-qos-logback.version>1.2.11</ch-qos-logback.version>
+        <commons-collection4.version>4.4</commons-collection4.version>
         <commons-fileupload-version>1.4</commons-fileupload-version>
-        <dozer-version>6.5.0</dozer-version>
-        <ehcache-version>3.9.0</ehcache-version>
-        <commons-lang3-version>3.11</commons-lang3-version>
-        <commons-io-version>2.6</commons-io-version>
+        <commons-io-version>2.11.0</commons-io-version>
+        <commons-lang3-version>3.12.0</commons-lang3-version>
+        <commons-text.version>1.9</commons-text.version>
+        <commons-validator.version>1.7</commons-validator.version>
         <connector-api-version>1.5</connector-api-version>
-        <logstash-logback-version>6.6</logstash-logback-version>
+        <dozer-version>6.5.2</dozer-version>
+        <dynamodb.version>1.12.300</dynamodb.version>
+        <ehcache-version>3.10.1</ehcache-version>
         <hamcrest-all-version>1.3</hamcrest-all-version>
-        <joda-time-version>2.10.4</joda-time-version>
+        <javax.jms.version>2.0.1</javax.jms.version>
+        <jaxb-impl.version>4.0.0</jaxb-impl.version>
+        <joda-time-version>2.11.1</joda-time-version>
+        <jooq.version>3.17.4</jooq.version>
+        <json-flattener.version>0.14.0</json-flattener.version>
+        <log4j-api.version>2.18.0</log4j-api.version>
+        <logstash-logback-version>7.2</logstash-logback-version>
+        <micrometer-registry-prometheus.version>1.9.4</micrometer-registry-prometheus.version>
+        <mongo-db-version>3.12.11</mongo-db-version>
+        <nimbus-jose-jwt.version>9.24.4</nimbus-jose-jwt.version>
+        <okta.version>2.1.6</okta.version>
+        <postgresql.version>42.5.0</postgresql.version>
+        <prometheus.version>0.16.0</prometheus.version>
+        <smartystreets.version>3.13.0</smartystreets.version>
+        <spring-cloud.version>2021.0.4</spring-cloud.version>
+        <spring-webflux.version>5.3.22</spring-webflux.version>
+        <springdoc-openapi.version>1.6.11</springdoc-openapi.version>
+        <therapi-runtime-javadoc-scribe.version>0.15.0</therapi-runtime-javadoc-scribe.version>
 
-        <!-- Spring Override Versions -->
-        <validation-api-version>1.1.0.Final</validation-api-version>
+        <!-- Managed Plugin Versions -->
+        <git-commit-id-plugin.version>4.9.10</git-commit-id-plugin.version>
+        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
+        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+        <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
+        <springdoc-openapi-maven-plugin.version>1.4</springdoc-openapi-maven-plugin.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.2</version>
+        <version>2.7.3</version>
     </parent>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${ch-qos-logback.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -89,12 +113,6 @@
                 <groupId>javax.jms</groupId>
                 <artifactId>javax.jms-api</artifactId>
                 <version>${javax.jms.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-boot-starter</artifactId>
-                <version>${swagger.version}</version>
             </dependency>
 
             <dependency>
@@ -115,16 +133,22 @@
                 <version>${nimbus-jose-jwt.version}</version>
             </dependency>
 
-			<dependency>
-				<groupId>com.smartystreets.api</groupId>
-				<artifactId>smartystreets-java-sdk</artifactId>
-				<version>${smartystreets.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>com.smartystreets.api</groupId>
+                <artifactId>smartystreets-java-sdk</artifactId>
+                <version>${smartystreets.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.amazonaws</groupId>
                 <artifactId>aws-java-sdk-dynamodb</artifactId>
                 <version>${dynamodb.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-ses</artifactId>
+                <version>${aws-java-sdk-ses.version}</version>
             </dependency>
 
             <dependency>
@@ -142,6 +166,12 @@
             <dependency>
                 <groupId>com.okta.spring</groupId>
                 <artifactId>okta-spring-boot-starter</artifactId>
+                <version>${okta.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.okta.spring</groupId>
+                <artifactId>okta-spring-sdk</artifactId>
                 <version>${okta.version}</version>
             </dependency>
 
@@ -182,6 +212,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${commons-text.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>javax.resource</groupId>
                 <artifactId>connector-api</artifactId>
                 <version>${connector-api-version}</version>
@@ -205,47 +241,132 @@
                 <version>${joda-time-version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webflux</artifactId>
+                <version>${spring-webflux.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring-webflux.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.wnameless.json</groupId>
+                <artifactId>json-flattener</artifactId>
+                <version>${json-flattener.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collection4.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc-openapi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-security</artifactId>
+                <version>${springdoc-openapi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-javadoc</artifactId>
+                <version>${springdoc-openapi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-validator</groupId>
+                <artifactId>commons-validator</artifactId>
+                <version>${commons-validator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-impl</artifactId>
+                <version>${jaxb-impl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.5</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.7</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>false</autoReleaseAfterClose>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-	
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven-gpg-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>${nexus-staging-maven-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.springdoc</groupId>
+                    <artifactId>springdoc-openapi-maven-plugin</artifactId>
+                    <version>${springdoc-openapi-maven-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>pl.project13.maven</groupId>
+                    <artifactId>git-commit-id-plugin</artifactId>
+                    <version>${git-commit-id-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
 </project>
