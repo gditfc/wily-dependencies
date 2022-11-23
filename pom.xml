@@ -65,7 +65,7 @@
         <mongo-db-version>3.12.11</mongo-db-version>
         <nimbus-jose-jwt.version>9.24.4</nimbus-jose-jwt.version>
         <okta.version>2.1.6</okta.version>
-        <postgresql.version>42.5.0</postgresql.version>
+        <postgresql.version>42.5.1</postgresql.version>
         <prometheus.version>0.16.0</prometheus.version>
         <smartystreets.version>3.13.0</smartystreets.version>
         <spring-cloud.version>2021.0.4</spring-cloud.version>
